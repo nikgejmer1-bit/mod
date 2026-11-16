@@ -1,0 +1,30 @@
+
+name: Build Wheat Sweep
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Build mod
+        run: chmod +x build.sh && ./build.sh
+
+      - name: Upload mod JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: wheat-sweep-1.2.0
+          path: build/libs/*.jar
