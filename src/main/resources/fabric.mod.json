@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "wheatsweep",
+  "version": "${version}",
+  "name": "Wheat Sweep",
+  "description": "Hold Shift to harvest connected mature wheat with a hoe or plant a connected farmland patch with wheat seeds.",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ru.openai.wheatsweep.WheatSweepMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
